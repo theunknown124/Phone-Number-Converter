@@ -10,18 +10,40 @@ public class PhoneNumberConverter {
 		//do while loop for repeating user input-
 		
 		String phrase;
+		int phraseLength;
 		do {
 			System.out.println("Enter a Company Catchphrase phone number ex. 1-800-CAR-LOAN:");
 			phrase = input.next();
+			
+			phraseLength = phrase.length();
+			
+			//System.out.println(phraseLength);
+			
+			if(phraseLength > 14) {
+				System.out.println("Phrase is longer than 11 digits");
+				System.out.println("Would you like to enter another phone number? Enter Yes If not enter a no\n");
+				phrase = input.next(); //user should enter an yes or a no
+				
+				
+				
+			}
+			else{
+				System.out.println(wordsToPhoneNum(phrase));
+				System.out.println("Would you like to enter another phone number? Enter Yes If not enter a no\n");
+				phrase = input.next(); //User should enter an yes or a no
+				
+				
+			}
+			
 			
 			if(phrase.equalsIgnoreCase("no")) {
 				System.out.println("Program exitting");
 				System.exit(0);
 				break;
-			}	
+			}
 			
-			System.out.println(wordsToPhoneNum(phrase));
-			System.out.println("Would you like to enter another phone number? If not enter a no\n");
+			
+			
 			
 		}while(!phrase.equalsIgnoreCase("no"));
 		
@@ -134,6 +156,7 @@ return valid;
 
 
 ///////////////////////////////////////////////
+
 
  
 }
